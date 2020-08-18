@@ -79,7 +79,7 @@
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://linzihan1314.github.io/images/avatar.png?v=1597756011984" class="avatar">
+            <img src="https://linzihan1314.github.io/images/avatar.png?v=1597758186118" class="avatar">
         </div>
         <div class="sitename">Gridea</div>
         <span class="describtion" data-text='["温故而知新"]'>&nbsp;</span>
@@ -451,30 +451,53 @@
                 <div id="comment" style="background: white">
                     <div class="commentcontainer">
                         
-                        
-                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                        <style>
+    @media screen and (min-width: 1300px) {
+        .veditor::placeholder {
+            color: #b3b3b3;
+            font-size: 18px;
+            text-align: center;
+            line-height: 3rem;
+            font-family: kaiti;
+        }
+    }
+</style>
 
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '0578949a06ee0c7c0c5f Client Secret',
-    clientSecret: '6e07abd787459c90cb1f5c202b75ea8c727d0d4b',
-    repo: 'linzihan1314.github.io',
-    owner: 'linzihan1314',
-    admin: ['linzihan1314'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-                        
-                        
+<body>
+    <div id="vcomments">
+    </div>
+    <script src='https://linzihan1314.github.io/media/js/valine.min.js'></script>
+    <script src="https://linzihan1314.github.io/media/js/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: '7J6ocJ16KyCQAI97pFHxHsKV-gzGzoHsz',
+            appKey: 'D77uVAYtATQ6nf41oijV7sQ3',
+            notify: true,
+            verify: false,
+            avatar: 'retro',
+            pageSize: 10,
+            placeholder: '既然来了，何不畅所欲言呢？',
+            visitor: true, // 阅读量统计
+        });
+    </script>
+    <script type="text/javascript">
+        // jinrishici.load(function (result) {
+        //     var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+        //         .dynasty + " · " + result.data.origin.author;
+        //     if (jrsc_plac != undefined)
+        //         document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+        // 
+        var jrsc = '既然来了，何不畅所欲言呢？';
+        jinrishici.load(function (result) {
+                // 自己的处理逻辑
+                jrsc = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+                 .dynasty + " · " + result.data.origin.author;
+            });
+    </script> 
+</body>
+                        <div class="clear"></div>
                         
                     </div>
                 </div>
@@ -707,30 +730,29 @@
         <div name="comment" style="background: white;margin-top:100px">
             <div class="commentcontainer">
                 
-                
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                <body>
+    <div id="vcomments1"></div>
 
-<div id="gitalk-container"></div>
-
+<script src='https://linzihan1314.github.io/media/js/valine.min.js'></script>
+<script src="https://linzihan1314.github.io/media/js/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 <script>
-
-  var gitalk = new Gitalk({
-    clientID: '0578949a06ee0c7c0c5f Client Secret',
-    clientSecret: '6e07abd787459c90cb1f5c202b75ea8c727d0d4b',
-    repo: 'linzihan1314.github.io',
-    owner: 'linzihan1314',
-    admin: ['linzihan1314'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
+    new Valine({
+        el: '#vcomments1',
+        appId: '7J6ocJ16KyCQAI97pFHxHsKV-gzGzoHsz',
+        appKey: 'D77uVAYtATQ6nf41oijV7sQ3',
+        notify: true,
+        verify: false,
+        avatar: 'retro',
+        pageSize: 10,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
 </script>
 
-                
-                
+</body>
+
+                <div class="clear"></div>
                 
             </div>
         </div>
